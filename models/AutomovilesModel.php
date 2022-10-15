@@ -25,6 +25,14 @@ class AutomovilesModel{
 
     }
 
+    public function insertar($placa, $marca, $modelo, $anio, $color){
+
+        $stmt = $this->db->prepare("INSERT INTO automoviles (placa, marca, modelo, anio, color) VALUES(?,?,?,?,?)");
+        $stmt->bind_param('sssds',$placa, $marca, $modelo, $anio, $color);
+        $stmt->execute();
+        
+    }
+
 }
 
 ?>

@@ -10,6 +10,7 @@
 
     <h2><?php echo $data['titulo']; ?></h2>
 
+    <a href="index.php?c=Automoviles&a=nuevo">Agregar</a>
     <table border="1" width="80%">
         <thead>
             <tr>

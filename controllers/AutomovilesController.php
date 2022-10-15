@@ -18,6 +18,28 @@ class AutomovilesController{
 
     }
 
+    public function nuevo(){
+
+        $data['titulo'] = "Agregar un Automovil";
+        require_once "views/nuevo.view.php";
+
+    }
+
+    public function guardar(){
+
+        $placa = $_POST['placa'];
+        $marca = $_POST['marca'];
+        $modelo = $_POST['modelo'];
+        $anio = $_POST['anio'];
+        $color = $_POST['color'];
+
+        $automoviles = new AutomovilesModel();
+        $automoviles->insertar($placa, $marca, $modelo, $anio, $color);
+
+        $this->listado();
+
+    }
+
 }
 
 ?>
