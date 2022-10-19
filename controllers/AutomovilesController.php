@@ -40,6 +40,34 @@ class AutomovilesController{
 
     }
 
+    public function modificar($id){
+
+        $automovil = new AutomovilesModel();
+
+        $data['id'] = $id;
+        $data['titulo'] = "Modificar automovil";
+        $data['automovil'] = $automovil->getAutomovil($id);
+
+        require_once "views/modificar.view.php";
+
+    }
+
+    public function actualizar(){
+
+        $id = $_POST['id'];
+        $placa = $_POST['placa'];
+        $marca = $_POST['marca'];
+        $modelo = $_POST['modelo'];
+        $anio = $_POST['anio'];
+        $color = $_POST['color'];
+        
+        $automovil = new AutomovilesModel();
+        $automovil->actualizar($id, $placa, $marca, $modelo, $anio, $color);
+
+        $this->listado();
+
+    }
+
 }
 
 ?>

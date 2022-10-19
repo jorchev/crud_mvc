@@ -33,6 +33,27 @@ class AutomovilesModel{
         
     }
 
+    public function getAutomovil($id){
+
+        $stmt = $this->db->prepare("SELECT * FROM automoviles WHERE id = ? LIMIT 1");
+        $stmt->bind_param('d',$id);
+        $stmt->execute();
+
+        $resultado = $stmt->get_result();
+        $row = $resultado->fetch_assoc();
+
+        return $row;
+
+    }
+
+    public function actualizar($id, $placa, $marca, $modelo, $anio, $color){
+
+        $stmt = $this->db->prepare("UPDATE automoviles SET placa = ?, marca = ?, modelo = ?, anio = ?, color = ? WHERE id = ?");
+        $stmt->bind_param('sssdsd', $placa, $marca, $modelo, $anio, $color, $id);
+        $stmt->execute();
+
+    }
+
 }
 
 ?>

@@ -19,6 +19,7 @@
                 <th>Modelo</th>
                 <th>Año</th>
                 <th>Color</th>
+                <th>Opciones</th>
             </tr>
         </thead>
 
@@ -34,6 +35,7 @@
                     echo "<td>{$auto['modelo']}</td>";
                     echo "<td>{$auto['anio']}</td>";
                     echo "<td>{$auto['color']}</td>";
+                    echo "<td><a href=\"index.php?c=automoviles&a=modificar&id={$auto['id']}\">Modificar</a></td>";
                     echo "</tr>";
 
                 }
