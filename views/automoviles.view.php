@@ -35,7 +35,10 @@
                     echo "<td>{$auto['modelo']}</td>";
                     echo "<td>{$auto['anio']}</td>";
                     echo "<td>{$auto['color']}</td>";
-                    echo "<td><a href=\"index.php?c=automoviles&a=modificar&id={$auto['id']}\">Modificar</a></td>";
+                    echo "<td>
+                            <a href=\"index.php?c=automoviles&a=modificar&id={$auto['id']}\">Modificar</a> / 
+                            <a href=\"#\" onclick=confirmarEliminar('{$auto['placa']}',{$auto['id']})>Eliminar</a>
+                        </td>";
                     echo "</tr>";
 
                 }
@@ -45,6 +48,18 @@
         </tbody>
 
     </table>
+
+    <script>
+        function confirmarEliminar(placa,id){
+
+            var resp = confirm("Deseas eliminar el automóvil con la placa " + placa);
+            if(resp){
+                window.location.href = "index.php?c=automoviles&a=eliminar&id=" + id;
+            }
+
+        }
+
+    </script>
 
 </body>
 </html>

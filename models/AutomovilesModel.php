@@ -54,6 +54,14 @@ class AutomovilesModel{
 
     }
 
+    public function eliminar($id){
+
+        $stmt = $this->db->prepare("DELETE FROM automoviles WHERE id = ? LIMIT 1");
+        $stmt->bind_param('d',$id);
+        $stmt->execute();
+
+    }
+
 }
 
 ?>

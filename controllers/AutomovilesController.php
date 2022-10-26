@@ -68,6 +68,15 @@ class AutomovilesController{
 
     }
 
+    public function eliminar($id){
+
+        $automovil = new AutomovilesModel();
+        $automovil->eliminar($id);
+
+        $this->listado();
+
+    }
+
 }
 
 ?>
