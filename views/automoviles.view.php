@@ -52,7 +52,6 @@
         </table>
     </div>
 
-    <script src="lib/js/jquery-3.5.1.min.js"></script>
     <script src="lib/js/bootstrap.bundle.min.js"></script>
     <script>
         function confirmarEliminar(placa,id){
