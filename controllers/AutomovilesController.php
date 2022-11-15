@@ -1,9 +1,13 @@
 <?php
+session_start();
 
 class AutomovilesController{
 
     public function __construct(){
 
+        if(!isset($_SESSION['id'])){
+            die("Primero <a href=\"index.php\">inicia sesion</a> para acceder a esta sección");
+        }
         require_once "models/AutomovilesModel.php";
 
     }

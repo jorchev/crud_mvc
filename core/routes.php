@@ -4,18 +4,19 @@
 
         $archivoControlador = "controllers/".ucwords($controlador)."Controller.php";
         $nombreControlador = ucwords($controlador)."Controller";
-
+        
         // Validar que el archivo exista
         if(!is_file($archivoControlador)){
             $archivoControlador = "controllers".CONTROLADOR_PRINCIPAL."Controller.php";
         }
+        
+        require_once $archivoControlador;
 
         // Validar que la clase exista
         if(!class_exists($nombreControlador)){
             $nombreControlador = CONTROLADOR_PRINCIPAL."Controller";
         }
-
-        require_once $archivoControlador;
+        
         $control = new $nombreControlador();
 
         return $control;
