@@ -14,18 +14,21 @@
         <nav class="navbar navbar-expand-lg navbar-light bg-light mb-4">
             <div class="container-fluid">
                 <a class="navbar-brand" href="index.php"><?php echo $data['titulo']; ?></a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown">
                 <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item"><a href="#" class="nav-link inactive">Bienvenido <?php echo $_SESSION['nombre']; ?></a></li>
+                        <li class="nav-item"><a href="index.php?c=Automoviles&a=nuevo" class="nav-link active">Agregar</a></li>
                         <li class="nav-item"><a href="index.php?c=Usuarios&a=cerrarSesion" class="nav-link active">Cerrar sesión</a></li>
                     </ul>
+                    <span class="navbar-text">
+                        Bienvenido <?php echo $_SESSION['nombre']; ?>
+                    </span>
                 </div>
             </div>
         </nav>
-        <a href="index.php?c=Automoviles&a=nuevo" class="btn btn-success mb-3">Agregar</a>
+
         <table class="table table-striped">
             <thead class="table-dark">
                 <tr>
