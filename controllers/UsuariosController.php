@@ -11,7 +11,6 @@ class UsuariosController{
 
     public function mostrarLogin(){
 
-        //$usuario = new UsuariosModel();
         $data['titulo'] = 'Iniciar sesión';
         require_once "views/login.view.php";
 
